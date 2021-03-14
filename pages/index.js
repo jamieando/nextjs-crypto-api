@@ -6,11 +6,11 @@ import Layout from '../components/Layout';
 export default function Home({ filteredCoins }) {
   const [search, setSearch] = useState('');
 
-  const allCoins = filteredCoins.filter(coin =>
+  const allCoins = filteredCoins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     e.preventDefault();
 
     setSearch(e.target.value.toLowerCase());
@@ -35,7 +35,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      filteredCoins
-    }
+      filteredCoins,
+    },
   };
 };
